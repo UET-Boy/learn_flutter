@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.grey,
+        primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('App Bar'),
+          title: const Text('My App Screen'),
           centerTitle: true,
         ),
         body: const Center(
           child: Text(
-            'This is text body',
+            'This is the body of the app',
             style: TextStyle(
               fontSize: 20,
               letterSpacing: 2.0,
               fontWeight: FontWeight.bold,
-              color: Color.fromARGB(207, 245, 127, 23),
+              color: Colors.red,
               //fontStyle: FontStyle.italic,
             ),
           ),
@@ -25,7 +25,7 @@ void main() {
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: const Icon(
-            Icons.heart_broken,
+            Icons.health_and_safety_rounded,
             color: Color.fromARGB(255, 177, 15, 12),
           ),
         ),
