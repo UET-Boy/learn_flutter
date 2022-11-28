@@ -28,41 +28,44 @@ class DoApp extends StatelessWidget {
           centerTitle: true,
         ),
         body: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Center(
-            child: Column(
-              //crossAxisAlignment: CrossAxisAlignment.,
-              children: [
-                const Text(
-                  '<NAME>',
-                  style: TextStyle(letterSpacing: 1.0),
-                ),
-                const Text(
-                  'Tazz',
-                  style: TextStyle(
-                      color: Colors.yellow,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
-                ),
-                const Text(
-                  '<TRAIT>',
-                  style: TextStyle(letterSpacing: 1.0),
-                ),
-                const Text(
-                  'Cartoon',
-                  style: TextStyle(
-                      color: Colors.yellow,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
-                ),
-                Row(
-                  children: const [
-                    Icon(Icons.phone_callback),
-                    Text('+91 323 675883')
-                  ],
-                )
-              ],
-            ),
+          padding: const EdgeInsets.all(30),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'NAME:',
+                style: TextStyle(letterSpacing: 1.0),
+              ),
+              const Text(
+                'Tazz',
+                style: TextStyle(
+                    color: Colors.yellow,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold),
+              ),
+              const Text(
+                'TRAIT:',
+                style: TextStyle(letterSpacing: 1.0),
+              ),
+              const Text(
+                'Cartoon',
+                style: TextStyle(
+                    color: Colors.yellow,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold),
+              ),
+              Row(
+                children: const [
+                  Icon(
+                    Icons.phone_callback,
+                    color: Colors.blueAccent,
+                  ),
+                  SizedBox(width: 10),
+                  Text('+91 323 675883')
+                ],
+              )
+            ],
           ),
         ));
   }
