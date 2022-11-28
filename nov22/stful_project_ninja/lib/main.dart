@@ -6,15 +6,22 @@ void main() {
   ));
 }
 
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
   const NinjaCard({super.key});
+
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+  int nAge = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.grey[900],
         appBar: AppBar(
-          title: const Text('Employee ID Card'),
+          title: const Text('Employee ID Card 2'),
           centerTitle: true,
           backgroundColor: Colors.grey[800],
           elevation: 0.0,
@@ -68,13 +75,58 @@ class NinjaCard extends StatelessWidget {
                   color: Colors.red,
                 ),
               ),
-              const Text(
-                '19',
-                style: TextStyle(
-                    color: Colors.yellow,
-                    fontSize: 28,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.bold),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 40,
+                    child: Text(
+                      '$nAge',
+                      style: const TextStyle(
+                          color: Colors.yellow,
+                          fontSize: 28,
+                          letterSpacing: 2.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  TextButton.icon(
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.grey[800]),
+                      onPressed: () {
+                        setState(() {
+                          nAge += 1;
+                        });
+                      },
+                      icon: const Icon(
+                        Icons.text_increase_rounded,
+                        color: Colors.green,
+                      ),
+                      label: const Text(
+                        "Plus",
+                        style: TextStyle(color: Colors.white),
+                      )),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  TextButton.icon(
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.grey[800]),
+                      onPressed: () {
+                        setState(() {
+                          nAge -= 1;
+                        });
+                      },
+                      icon: const Icon(
+                        Icons.text_decrease_rounded,
+                        color: Colors.red,
+                      ),
+                      label: const Text(
+                        "Minus",
+                        style: TextStyle(color: Colors.white),
+                      ))
+                ],
               ),
               const SizedBox(
                 height: 10.0,
