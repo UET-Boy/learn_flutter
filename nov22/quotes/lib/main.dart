@@ -30,19 +30,26 @@ class _ListsState extends State<Lists> {
         elevation: 0.0,
         title: const Text('Student List'),
         centerTitle: true,
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.red,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: sNames
-              .map((fNames) => Text(
-                    fNames,
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold),
-                  ))
-              .toList(),
+        child: Container(
+          alignment: Alignment.center,
+          width: 200,
+          height: 400,
+          padding: const EdgeInsets.all(8.0),
+          color: Colors.grey[400],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: sNames
+                .map((fNames) => Text(
+                      fNames,
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
+                    ))
+                .toList(),
+          ),
         ),
       ),
     );
