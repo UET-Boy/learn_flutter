@@ -14,7 +14,11 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sample Application'),
+        elevation: 0.0,
+        title: const Text(
+          'Sample Application',
+          style: TextStyle(fontFamily: 'Pacifico'),
+        ),
         centerTitle: true,
         backgroundColor: Colors.redAccent[400],
       ),
