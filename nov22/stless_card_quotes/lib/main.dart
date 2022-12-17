@@ -21,9 +21,11 @@ class _DartAppState extends State<DartApp> {
     Quote(text: 'Something is better', author: 'Stupid'),
     Quote(text: 'Look before you leap', author: 'Panda'),
     Quote(text: 'You die another day', author: 'James'),
-    Quote(text: 'You belong to GOD', author: 'Satan')
+    Quote(text: 'You belong to GOD', author: 'Satan'),
+    Quote(text: 'Necessity is the mother of invention', author: 'Rambo')
   ];
-
+//You can develop this app easily once you start developing it.
+//padding will make a little space outside the corners of it.
 //this function is redundant now, so deleting it
 /*
 
