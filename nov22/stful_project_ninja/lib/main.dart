@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttericon/font_awesome5_icons.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -38,7 +39,7 @@ class _NinjaCardState extends State<NinjaCard> {
                 ),
               ),
               const Divider(
-                thickness: 2.0,
+                thickness: 1.0,
                 height: 50,
                 color: Colors.blueGrey,
               ),
@@ -53,16 +54,16 @@ class _NinjaCardState extends State<NinjaCard> {
                   color: Colors.red,
                 ),
               ),
-              const Text(
-                'Lee Chu',
-                style: TextStyle(
-                    color: Colors.yellow,
-                    fontSize: 28,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 10.0,
+              const Padding(
+                padding: EdgeInsets.fromLTRB(0, 4, 0, 4),
+                child: Text(
+                  'Lee Chu',
+                  style: TextStyle(
+                      color: Colors.yellow,
+                      fontSize: 28,
+                      letterSpacing: 2.0,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
               const Text(
                 'AGE:',
@@ -128,9 +129,6 @@ class _NinjaCardState extends State<NinjaCard> {
                       ))
                 ],
               ),
-              const SizedBox(
-                height: 10.0,
-              ),
               const Text(
                 'RANK:',
                 style: TextStyle(color: Colors.grey),
@@ -142,16 +140,16 @@ class _NinjaCardState extends State<NinjaCard> {
                   color: Colors.red,
                 ),
               ),
-              const Text(
-                'Operations Manager',
-                style: TextStyle(
-                    color: Colors.yellow,
-                    fontSize: 28,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 10.0,
+              const Padding(
+                padding: EdgeInsets.fromLTRB(0, 4, 0, 4),
+                child: Text(
+                  'Operations Manager',
+                  style: TextStyle(
+                      color: Colors.yellow,
+                      fontSize: 28,
+                      letterSpacing: 2.0,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
               const Text(
                 'CONTACT DETAILS:',
@@ -169,10 +167,13 @@ class _NinjaCardState extends State<NinjaCard> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: const [
-                    Icon(
-                      Icons.phone_android_rounded,
-                      color: Colors.grey,
-                      size: 30.0,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 8, 8, 0),
+                      child: Icon(
+                        Icons.phone_android_rounded,
+                        color: Colors.grey,
+                        size: 30.0,
+                      ),
                     ),
                     Text(
                       '+1 92 322 930293',
@@ -189,13 +190,38 @@ class _NinjaCardState extends State<NinjaCard> {
               ),
               Row(
                 children: const [
-                  Icon(
-                    Icons.mail_outline,
-                    color: Colors.grey,
-                    size: 30.0,
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 8, 0),
+                    child: Icon(
+                      Icons.mail_outline,
+                      color: Colors.grey,
+                      size: 30.0,
+                    ),
                   ),
                   Text(
                     'lee.chu@company.com',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellow,
+                        fontSize: 20),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 8, 0),
+                    child: Icon(
+                      FontAwesome5.github,
+                      color: Colors.grey,
+                      size: 30.0,
+                    ),
+                  ),
+                  Text(
+                    'lee-chu.github.io',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.yellow,
