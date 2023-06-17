@@ -4,11 +4,16 @@ import 'package:todo_app/constants/colors.dart';
 import 'package:todo_app/model/todo.dart';
 import 'package:todo_app/widgets/todo_item.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   Home({
     super.key,
   });
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   final todosList = ToDo.todoList();
 
   @override
@@ -36,7 +41,12 @@ class Home extends StatelessWidget {
                                 fontSize: 30, fontWeight: FontWeight.w500),
                           ),
                         ),
-                        for (ToDo todoo in todosList) ToDoItem(todo: todoo)
+                        for (ToDo todoo in todosList)
+                          ToDoItem(
+                            todo: todoo,
+                            onToDoChanged: _handleToDoChange,
+                            onDeleteItem: () {},
+                          )
                       ],
                     ),
                   )
@@ -72,17 +82,17 @@ class Home extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(bottom: 20, right: 20),
+                    margin: const EdgeInsets.only(bottom: 20, right: 20),
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(
-                        '+',
-                        style: TextStyle(fontSize: 40),
-                      ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: tdBlue,
-                        minimumSize: Size(60, 60),
+                        minimumSize: const Size(60, 60),
                         elevation: 10,
+                      ),
+                      child: const Text(
+                        '+',
+                        style: TextStyle(fontSize: 40),
                       ),
                     ),
                   )
@@ -91,6 +101,12 @@ class Home extends StatelessWidget {
             )
           ],
         ));
+  }
+
+  void _handleToDoChange(ToDo todo) {
+    setState(() {
+      todo.isDone = !todo.isDone;
+    });
   }
 
   Widget searchBox() {
